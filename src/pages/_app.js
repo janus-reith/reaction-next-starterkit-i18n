@@ -24,8 +24,8 @@ import { appWithTranslation } from '../i18n'
 
 const { publicRuntimeConfig } = getConfig();
 
-@appWithTranslation
 @withApolloClient
+@appWithTranslation
 @withMobX
 @withShop
 @withViewer
