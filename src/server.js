@@ -9,6 +9,8 @@ const logger = require("./lib/logger");
 const router = require("./routes");
 const { configureAuthForServer } = require("./serverAuth");
 const { sitemapRoutesHandler } = require("./sitemapRoutesHandler");
+const nextI18NextMiddleware = require('next-i18next/middleware')
+const nextI18next = require('./i18n')
 
 // First create the NextJS app.
 // Note that only `config` can be used here because the NextJS `getConfig()` does not
@@ -26,6 +28,7 @@ app
     const server = express();
 
     server.use(compression());
+    server.use(nextI18NextMiddleware(nextI18next))
 
     // We use a client-side cookie session instead of a server session so that there are no
     // issues when load balancing without sticky sessions.

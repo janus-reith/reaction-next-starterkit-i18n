@@ -6,7 +6,9 @@ import withCatalogItems from "containers/catalog/withCatalogItems";
 import ProductGrid from "components/ProductGrid";
 import trackProductListViewed from "lib/tracking/trackProductListViewed";
 import { inPageSizes } from "lib/utils/pageSizes";
+import { withNamespaces } from '../i18n'
 
+@withNamespaces('footer')
 @withCatalogItems
 @inject("routingStore", "uiStore")
 @observer

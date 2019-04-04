@@ -20,9 +20,11 @@ import getPageContext from "../lib/theme/getPageContext";
 import components from "../custom/componentsContext";
 import componentTheme from "../custom/componentTheme";
 import getAllTags from "../lib/data/getAllTags";
+import { appWithTranslation } from '../i18n'
 
 const { publicRuntimeConfig } = getConfig();
 
+@appWithTranslation
 @withApolloClient
 @withMobX
 @withShop
